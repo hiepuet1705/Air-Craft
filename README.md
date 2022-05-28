@@ -37,5 +37,5 @@ Bài tập cuối học phần INT2215
 ## Cài đặt
 - Clone repository về máy
 - Tìm và chạy file Gamecuoiki.exe
-- Demo: 
+- Demo: https://youtu.be/hEQYmTEJGgA
 
