@@ -8,7 +8,7 @@ Bài tập cuối học phần INT2215
 - Điều khiển phi thuyền tiêu diệt hành tinh và phi thuyền địch
 - Cách chơi:
   - Sử dụng phím W,A,S,D để di chuyển
-  - Nhấn chuột trái đẻ bắn
+  - Nhấn chuột trái để bắn
 - Người chơi khởi đầu với 1 thanh máu
 - Khi va chạm với thuyền địch hoặc đạn sẽ mất 1 lượng máu
 - Người chơi thua khi máu về 0 và chiến thắng khi tiêu diệt được Boss
