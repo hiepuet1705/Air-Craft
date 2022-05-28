@@ -1,4 +1,5 @@
 #include "Boss.h"
+
 //#include <cmath>
 
 void Boss::initSprite()
@@ -91,6 +92,7 @@ void Boss::updateMovement()
 	{
 		this->sprite.setPosition(this->sprite.getPosition().x,this->upMax);
 	}
+	
 	this->sprite.move(this->speedMovement_x, this->speedMovement_y);
 }
 
@@ -108,6 +110,11 @@ void Boss::updateAnimation()
 		this->sprite.setTextureRect(this->rectSprite);
 		this->clockAnimation.restart();
 	}
+}
+
+void Boss::move(float x, float y)
+{
+	this->sprite.move(x, y);
 }
 
 const bool Boss::canAttack()

@@ -20,8 +20,9 @@ void Enemy::initVariables()
 }
 void Enemy::intShape()
 {
-	const static std::string fallingStars[] = { "Textures/thienthach.png","Textures/thienthach1.png" ,"Textures/thienthach2.png" ,"Textures/thienthach3.png" ,"Textures/thienthach4.png" };
-	this->Star = fallingStars[rand() % 5];
+	const static std::string fallingStars[] = { "Textures/thienthach.png","Textures/thienthach1.png" ,"Textures/thienthach2.png" ,
+		"Textures/thienthach3.png" ,"Textures/thienthach4.png","Textures/thienthach5.png","Textures/thienthach.png","Textures/thienthach7.png" };
+	this->Star = fallingStars[rand() % 8];
 	if (!this->shapeTexture.loadFromFile(Star)) {
 		std::cout << "Error";
 	}

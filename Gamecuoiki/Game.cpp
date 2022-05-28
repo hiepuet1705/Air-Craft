@@ -20,7 +20,7 @@ void Game::initGUI()
 	this->font.loadFromFile("Fonts/GameWin.ttf");
 	this->fon2.loadFromFile("Fonts/PixellettersFull.ttf");
 	// init point text
-	this->pointText.setPosition(1150.f, 25.f);
+	this->pointText.setPosition(1250.f, 10.f);
 	this->pointText.setFont(this->fon2);
 	this->pointText.setCharacterSize(60);
 	this->pointText.setFillColor(sf::Color::White);
@@ -35,7 +35,7 @@ void Game::initGUI()
 	this->gameOverText.setFont(this->font);
 	this->gameOverText.setCharacterSize(50);
 	this->gameOverText.setFillColor(sf::Color::Red);
-	this->gameOverText.setString("Game Over! \n Press Space to Play Again");
+	this->gameOverText.setString("		Game Over! \n Press Space to Play Again");
 	this->gameOverText.setPosition(this->window->getSize().x / 2.f - this->gameOverText.getGlobalBounds().width / 2.f
 		, this->window->getSize().y / 2.f - this->gameOverText.getGlobalBounds().height / 2.f);
 
@@ -336,13 +336,20 @@ void Game::updateCombat()
 
 void Game::updateBoss()
 {
-	if (this->points > 5) {
+	if (this->points > 50) {
 		this->isBossExist = true;
-		this->boss->update();	
+		this->boss->update();
+		if (this->clockMove.getElapsedTime().asSeconds() > 1.3f)
+		{
+			
+			this->boss->move((this->player->getPos().x-this->boss->getPos().x)*2/5, 0.f);
+			
+			this->clockMove.restart();
+		}
 		for (size_t k = 0; k < this->bullets.size(); k++) {
 			if (!isVictory) {
 				if (this->boss->getBounds().intersects(this->bullets[k]->getBounds())) {
-					this->boss->getDamge(50);
+					this->boss->getDamge(5);
 					delete this->bullets[k];
 					bullets.erase(bullets.begin() + k);
 				}

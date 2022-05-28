@@ -72,7 +72,8 @@ private:
 	//Boss
 	Boss* boss;
 	bool isBossExist;
-
+	//
+	sf::Clock clockMove;
 	//boss death
 	BossDeath* bossDeath;
 	//Weapon

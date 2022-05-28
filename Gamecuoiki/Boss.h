@@ -2,7 +2,7 @@
 
 #include<SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
-
+#include "Player.h"
 class Boss
 {
 private:
@@ -49,6 +49,7 @@ public:
 
 	void updateMovement();
 	void updateAnimation();
+	void move(float x, float y);
 	const bool canAttack();
 	void updateAttack();
 	void update();
